@@ -22,6 +22,5 @@ antsibull-docs collection \
 rsync -cprv --delete-after temp-rst/ rst/
 
 # Build Sphinx site
-[ -d html ] && rm -rf html
-#mkdir -p html
+[ -d build ] && rm -rf build
 sphinx-build -M html rst build -c . -W --keep-going
