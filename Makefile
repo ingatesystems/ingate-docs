@@ -1,13 +1,15 @@
 .DEFAULT_GOAL := fuego-ansible
 
 fuego-ansible:
-	[ -d docs/ansible/fuego/html ] && rm -rf docs/ansible/fuego/html
+	(cd build/fuego_ansible && ./build.sh)
+	$(RM) -rf docs/ansible/fuego/html
 	mkdir -p docs/ansible/fuego/html
-	(cd docs/ansible/fuego && ./build.sh)
+	mv build/fuego_ansible/build/html/* docs/ansible/fuego/html
 
 clean:
-	$(RM) -rf docs/ansible/fuego/build
-	$(RM) -rf docs/ansible/fuego/rst
-	$(RM) -rf docs/ansible/fuego/temp-rst
+	$(RM) -rf build/fuego_ansible/build
+	$(RM) -rf build/fuego_ansible/html
+	$(RM) -rf build/fuego_ansible/rst
+	$(RM) -rf build/fuego_ansible/temp-rst
 
 all: clean fuego-ansible
