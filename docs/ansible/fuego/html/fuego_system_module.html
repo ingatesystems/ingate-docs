@@ -115,7 +115,7 @@
 <h1>ingatesystems.fuego_modules.fuego_system – Manage system near functionality such as licenses, patches and upgrades on an Ingate SBC.<a class="headerlink" href="#ingatesystems-fuego-modules-fuego-system-manage-system-near-functionality-such-as-licenses-patches-and-upgrades-on-an-ingate-sbc" title="Permalink to this headline"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/ingatesystems/fuego_modules">ingatesystems.fuego_modules collection</a> (version 1.0.0).</p>
+<p>This plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/ingatesystems/fuego_modules">ingatesystems.fuego_modules collection</a> (version 1.1.0).</p>
 <p>You might already have this collection installed if you are using the <code class="docutils literal notranslate"><span class="pre">ansible</span></code> package.
 It is not included in <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code>.
 To check whether it is installed, run <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">list</span></code>.</p>
@@ -145,7 +145,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
-<li><p>ingatesdk &gt;= 1.0.6</p></li>
+<li><p>ingatesdk &gt;= 1.0.14</p></li>
 </ul>
 </section>
 <section id="parameters">
@@ -244,6 +244,19 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-flush_logins"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-parameter-flush-logins"><strong>flush_logins</strong></p>
+<a class="ansibleOptionLink" href="#parameter-flush_logins" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<p><span class="ansible-option-versionadded">added in 1.1.0 of ingatesystems.fuego_modules</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Log out all logged in admin users.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-latest"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-parameter-latest"><strong>latest</strong></p>
 <a class="ansibleOptionLink" href="#parameter-latest" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -255,7 +268,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-latest_major"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-parameter-latest-major"><strong>latest_major</strong></p>
 <a class="ansibleOptionLink" href="#parameter-latest_major" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -267,7 +280,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-latest_minor"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-parameter-latest-minor"><strong>latest_minor</strong></p>
 <a class="ansibleOptionLink" href="#parameter-latest_minor" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -279,7 +292,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-latest_patch"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-parameter-latest-patch"><strong>latest_patch</strong></p>
 <a class="ansibleOptionLink" href="#parameter-latest_patch" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -291,14 +304,14 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-liccode"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-parameter-liccode"><strong>liccode</strong></p>
 <a class="ansibleOptionLink" href="#parameter-liccode" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The license code (e.g. KRJM-Q625-FUVG). Must be set for <code class="docutils literal notranslate"><span class="pre">license</span></code>.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-license"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-parameter-license"><strong>license</strong></p>
 <a class="ansibleOptionLink" href="#parameter-license" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -310,7 +323,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-mode"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-parameter-mode"><strong>mode</strong></p>
 <a class="ansibleOptionLink" href="#parameter-mode" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -322,7 +335,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-opmode"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-parameter-opmode"><strong>opmode</strong></p>
 <a class="ansibleOptionLink" href="#parameter-opmode" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -334,14 +347,14 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-password"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-parameter-password"><strong>password</strong></p>
 <a class="ansibleOptionLink" href="#parameter-password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Password for account login on ingate.com. Must be set for <code class="docutils literal notranslate"><span class="pre">license</span></code> and <code class="docutils literal notranslate"><span class="pre">upgrade_download</span></code>.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-patch"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-parameter-patch"><strong>patch</strong></p>
 <a class="ansibleOptionLink" href="#parameter-patch" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -353,11 +366,24 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-reboot"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-parameter-reboot"><strong>reboot</strong></p>
 <a class="ansibleOptionLink" href="#parameter-reboot" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Reboot the unit.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-restart_sip"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-parameter-restart-sip"><strong>restart_sip</strong></p>
+<a class="ansibleOptionLink" href="#parameter-restart_sip" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<p><span class="ansible-option-versionadded">added in 1.1.0 of ingatesystems.fuego_modules</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Restart the SIP module and remove all state, like registrations etc.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
 <li><p><span class="ansible-option-choices-entry">no</span></p></li>
@@ -510,6 +536,16 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">fuego_system</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">client</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">stored_client_data</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">reboot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="c1"># Restart the SIP module</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">fuego_system</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">client</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">stored_client_data</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">restart_sip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="c1"># Log out all logged in admin users</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">fuego_system</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">client</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">stored_client_data</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">flush_logins</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -523,6 +559,23 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </tr>
 </thead>
 <tbody>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-flush_logins"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-return-flush-logins"><strong>flush_logins</strong></p>
+<a class="ansibleOptionLink" href="#return-flush_logins" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>A command status message</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class="docutils literal notranslate"><span class="pre">flush_logins</span></code> is yes and success</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-flush_logins/msg"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-return-flush-logins-msg"><strong>msg</strong></p>
+<a class="ansibleOptionLink" href="#return-flush_logins/msg" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The command status message</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “Successfully flushed all logins.”</p>
+</div></td>
+</tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-license"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-return-license"><strong>license</strong></p>
 <a class="ansibleOptionLink" href="#return-license" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
@@ -589,6 +642,23 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The command status message</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “Rebooting the unit now…”</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-restart_sip"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-return-restart-sip"><strong>restart_sip</strong></p>
+<a class="ansibleOptionLink" href="#return-restart_sip" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>A command status message</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class="docutils literal notranslate"><span class="pre">restart_sip</span></code> is yes and success</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-restart_sip/msg"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-system-module-return-restart-sip-msg"><strong>msg</strong></p>
+<a class="ansibleOptionLink" href="#return-restart_sip/msg" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The command status message</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “Successfully restarted the SIP module.”</p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">

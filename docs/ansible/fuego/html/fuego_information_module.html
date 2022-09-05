@@ -116,7 +116,7 @@
 <h1>ingatesystems.fuego_modules.fuego_information – Retrieve information from an Ingate SBC.<a class="headerlink" href="#ingatesystems-fuego-modules-fuego-information-retrieve-information-from-an-ingate-sbc" title="Permalink to this headline"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/ingatesystems/fuego_modules">ingatesystems.fuego_modules collection</a> (version 1.0.0).</p>
+<p>This plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/ingatesystems/fuego_modules">ingatesystems.fuego_modules collection</a> (version 1.1.0).</p>
 <p>You might already have this collection installed if you are using the <code class="docutils literal notranslate"><span class="pre">ansible</span></code> package.
 It is not included in <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code>.
 To check whether it is installed, run <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">list</span></code>.</p>
@@ -146,7 +146,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
-<li><p>ingatesdk &gt;= 1.0.6</p></li>
+<li><p>ingatesdk &gt;= 1.0.14</p></li>
 </ul>
 </section>
 <section id="parameters">
@@ -250,6 +250,19 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-sip_status"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-parameter-sip-status"><strong>sip_status</strong></p>
+<a class="ansibleOptionLink" href="#parameter-sip_status" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<p><span class="ansible-option-versionadded">added in 1.1.0 of ingatesystems.fuego_modules</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Return SIP status information and metrics.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-table_describe"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-parameter-table-describe"><strong>table_describe</strong></p>
 <a class="ansibleOptionLink" href="#parameter-table_describe" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -261,7 +274,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-table_list"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-parameter-table-list"><strong>table_list</strong></p>
 <a class="ansibleOptionLink" href="#parameter-table_list" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -273,7 +286,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-unit"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-parameter-unit"><strong>unit</strong></p>
 <a class="ansibleOptionLink" href="#parameter-unit" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -319,6 +332,11 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">fuego_information</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">client</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">stored_client_data</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">table_list</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+
+<span class="c1"># Return SIP status information and metrics</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">fuego_information</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">client</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">stored_client_data</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">sip_status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -412,6 +430,313 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status"><strong>sip_status</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>SIP status information and metrics</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class="docutils literal notranslate"><span class="pre">sip_status</span></code> is yes and success</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/active_sessions"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-active-sessions"><strong>active_sessions</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/active_sessions" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>A list of active SIP sessions</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/active_sessions/call_id"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-active-sessions-call-id"><strong>call_id</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/active_sessions/call_id" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The SIP Call-ID</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “<a class="reference external" href="mailto:qrvmhopdqmmfyjt&#37;&#52;&#48;foouser">qrvmhopdqmmfyjt<span>&#64;</span>foouser</a>”</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/active_sessions/callee"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-active-sessions-callee"><strong>callee</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/active_sessions/callee" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The SIP callee</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “\u0026lt;sip:<a class="reference external" href="mailto:foo&#37;&#52;&#48;example&#46;com">foo<span>&#64;</span>example<span>&#46;</span>com</a>\u0026gt;”</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/active_sessions/caller"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-active-sessions-caller"><strong>caller</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/active_sessions/caller" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The SIP caller</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “\u0026lt;sip:<a class="reference external" href="mailto:alice&#37;&#52;&#48;192&#46;168&#46;20&#46;45">alice<span>&#64;</span>192<span>&#46;</span>168<span>&#46;</span>20<span>&#46;</span>45</a>\u0026gt;”</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/active_sessions/start"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-active-sessions-start"><strong>start</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/active_sessions/start" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The time when the SIP session was established</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “10:50:51”</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/active_sessions/state"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-active-sessions-state"><strong>state</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/active_sessions/state" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The state of the SIP session</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “Established”</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/count_active_sessions"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-count-active-sessions"><strong>count_active_sessions</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/count_active_sessions" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The amount of active SIP sessions</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 0</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/count_max_registered_users"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-count-max-registered-users"><strong>count_max_registered_users</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/count_max_registered_users" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The amount of maximum registered SIP users</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 0</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/count_max_sessions"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-count-max-sessions"><strong>count_max_sessions</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/count_max_sessions" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The amount of maximum active SIP sessions</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 0</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/count_registered_users"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-count-registered-users"><strong>count_registered_users</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/count_registered_users" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The amount of registered SIP users</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 0</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/idsips_blacklist"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-idsips-blacklist"><strong>idsips_blacklist</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/idsips_blacklist" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>A list of blacklisted peers</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> []</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/idsips_packet_filtering"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-idsips-packet-filtering"><strong>idsips_packet_filtering</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/idsips_packet_filtering" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>A list of blacklisted peers</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/idsips_packet_filtering/hits"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-idsips-packet-filtering-hits"><strong>hits</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/idsips_packet_filtering/hits" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The amount of hits for a rule</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 0</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/idsips_packet_filtering/name"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-idsips-packet-filtering-name"><strong>name</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/idsips_packet_filtering/name" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The name of a rule</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “Scanners”</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/idsips_packet_filtering/number"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-idsips-packet-filtering-number"><strong>number</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/idsips_packet_filtering/number" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The rule number</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 1</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/idsips_rate_limiting"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-idsips-rate-limiting"><strong>idsips_rate_limiting</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/idsips_rate_limiting" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>A list of blacklisted peers</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/idsips_rate_limiting/hits"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-idsips-rate-limiting-hits"><strong>hits</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/idsips_rate_limiting/hits" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The amount of hits for a rule</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 0</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/idsips_rate_limiting/name"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-idsips-rate-limiting-name"><strong>name</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/idsips_rate_limiting/name" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The name of a rule</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “Default auto”</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/license_statistics"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-license-statistics"><strong>license_statistics</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/license_statistics" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>A list of different license statistics</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/license_statistics/current_use"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-license-statistics-current-use"><strong>current_use</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/license_statistics/current_use" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The amount of used licenses</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 0</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/license_statistics/license"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-license-statistics-license"><strong>license</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/license_statistics/license" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The type of license</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “SIP Registrar Users”</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/license_statistics/max_used"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-license-statistics-max-used"><strong>max_used</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/license_statistics/max_used" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The amount of maximum used licenses</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 0</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/message_statistics"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-message-statistics"><strong>message_statistics</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/message_statistics" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>A list of different message statistics</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/message_statistics/message"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-message-statistics-message"><strong>message</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/message_statistics/message" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The type of message</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “INVITE”</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/message_statistics/rx"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-message-statistics-rx"><strong>rx</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/message_statistics/rx" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The amount of received messages</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 0</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/message_statistics/tx"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-message-statistics-tx"><strong>tx</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/message_statistics/tx" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The amount of transmitted messages</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 0</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/monitored_servers"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-monitored-servers"><strong>monitored_servers</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/monitored_servers" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>A list of monitored SIP servers</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/monitored_servers/port"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-monitored-servers-port"><strong>port</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/monitored_servers/port" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The port used for monitoring</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> 5060</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/monitored_servers/server"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-monitored-servers-server"><strong>server</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/monitored_servers/server" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The server that is monitored</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “192.168.28.28”</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/monitored_servers/status"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-monitored-servers-status"><strong>status</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/monitored_servers/status" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The current monitoring status</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “Online”</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/monitored_servers/transport"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-monitored-servers-transport"><strong>transport</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/monitored_servers/transport" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The used transport protocol</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “UDP”</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/registered_users"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-registered-users"><strong>registered_users</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/registered_users" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>A list of registered SIP users</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/registered_users/registered_from"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-registered-users-registered-from"><strong>registered_from</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/registered_users/registered_from" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The IP address for which the user is registered from</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “192.168.56.3”</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-sip_status/registered_users/user"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-sip-status-registered-users-user"><strong>user</strong></p>
+<a class="ansibleOptionLink" href="#return-sip_status/registered_users/user" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The registered user</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “<a class="reference external" href="mailto:foouser&#37;&#52;&#48;example&#46;com">foouser<span>&#64;</span>example<span>&#46;</span>com</a>”</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-table_describe"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-table-describe"><strong>table_describe</strong></p>
 <a class="ansibleOptionLink" href="#return-table_describe" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
 </div></td>
@@ -419,7 +744,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class="docutils literal notranslate"><span class="pre">table_describe</span></code> is yes and success</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-table_describe/table"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-table-describe-table"><strong>table</strong></p>
 <a class="ansibleOptionLink" href="#return-table_describe/table" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
@@ -427,7 +752,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-table_describe/table/href"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-table-describe-table-href"><strong>href</strong></p>
 <a class="ansibleOptionLink" href="#return-table_describe/table/href" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -436,7 +761,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “<a class="reference external" href="http://192.168.1.1/api/v1/misc/dns_servers">http://192.168.1.1/api/v1/misc/dns_servers</a>”</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-table_describe/table/info"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-table-describe-table-info"><strong>info</strong></p>
 <a class="ansibleOptionLink" href="#return-table_describe/table/info" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
@@ -445,7 +770,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {“cert”: “OptPrivCert”, “name”: “Name”}</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-table_describe/table/name"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-table-describe-table-name"><strong>name</strong></p>
 <a class="ansibleOptionLink" href="#return-table_describe/table/name" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -454,7 +779,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “misc.dns_servers”</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-table_list"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-table-list"><strong>table_list</strong></p>
 <a class="ansibleOptionLink" href="#return-table_list" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
 </div></td>
@@ -462,7 +787,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class="docutils literal notranslate"><span class="pre">table_list</span></code> is yes and success</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-table_list/table"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-table-list-table"><strong>table</strong></p>
 <a class="ansibleOptionLink" href="#return-table_list/table" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
@@ -470,7 +795,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> success</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-table_list/table/href"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-table-list-table-href"><strong>href</strong></p>
 <a class="ansibleOptionLink" href="#return-table_list/table/href" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -479,7 +804,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “<a class="reference external" href="http://192.168.1.1/api/v1/misc/dns_servers">http://192.168.1.1/api/v1/misc/dns_servers</a>”</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-table_list/table/methods"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-table-list-table-methods"><strong>methods</strong></p>
 <a class="ansibleOptionLink" href="#return-table_list/table/methods" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
@@ -488,7 +813,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “GET”</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-table_list/table/name"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-table-list-table-name"><strong>name</strong></p>
 <a class="ansibleOptionLink" href="#return-table_list/table/name" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -497,7 +822,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “misc.dns_servers”</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-table_list/table/sdk_methods"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-table-list-table-sdk-methods"><strong>sdk_methods</strong></p>
 <a class="ansibleOptionLink" href="#return-table_list/table/sdk_methods" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
@@ -506,7 +831,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “add_row”</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit"><strong>unit</strong></p>
 <a class="ansibleOptionLink" href="#return-unit" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
@@ -514,7 +839,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> when <code class="docutils literal notranslate"><span class="pre">unit</span></code> is yes and success</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/installid"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-installid"><strong>installid</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/installid" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -523,7 +848,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “any”</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/interfaces"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-interfaces"><strong>interfaces</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/interfaces" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -532,7 +857,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “eth0 eth1 eth2 eth3 eth4 eth5”</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/lang"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-lang"><strong>lang</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/lang" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -541,7 +866,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “en”</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/lic_email"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-lic-email"><strong>lic_email</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/lic_email" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -550,7 +875,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “<a class="reference external" href="mailto:example&#37;&#52;&#48;example&#46;com">example<span>&#64;</span>example<span>&#46;</span>com</a>”</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/lic_mac"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-lic-mac"><strong>lic_mac</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/lic_mac" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -559,7 +884,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “any”</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/lic_name"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-lic-name"><strong>lic_name</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/lic_name" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -568,7 +893,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “Example Inc”</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/macaddr"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-macaddr"><strong>macaddr</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/macaddr" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -577,7 +902,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “52:54:00:4c:e2:07”</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/mode"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-mode"><strong>mode</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/mode" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -586,7 +911,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “Siparator”</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/modules"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-modules"><strong>modules</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/modules" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -595,7 +920,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “failover vpn sip qturn ems qos rsc voipsm”</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/patches"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-patches"><strong>patches</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/patches" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
@@ -604,7 +929,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> []</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/product"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-product"><strong>product</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/product" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -613,7 +938,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “Software SIParator/Firewall”</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/serial"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-serial"><strong>serial</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/serial" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -622,7 +947,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “IG-200-839-2008-0”</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/systemid"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-systemid"><strong>systemid</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/systemid" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -631,7 +956,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “IG-200-839-2008-0”</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/unitname"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-unitname"><strong>unitname</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/unitname" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -640,7 +965,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “Testname”</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="return-unit/version"></div><p class="ansible-option-title" id="ansible-collections-ingatesystems-fuego-modules-fuego-information-module-return-unit-version"><strong>version</strong></p>
 <a class="ansibleOptionLink" href="#return-unit/version" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
